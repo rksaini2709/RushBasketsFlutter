@@ -27,7 +27,7 @@ class HelpScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const NavigationBottomScreen()));
+                        builder: (context) => const NavigationBottomScreen(initialIndex: 0,)));
               },
               icon: const Icon(
                 Icons.arrow_back_ios,

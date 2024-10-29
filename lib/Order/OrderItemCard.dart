@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 
 import '../widget/Text.dart';
+import '../widget/VerticalSpacing.dart';
 import '../widget/color.dart';
 
 class OrderItemCard extends StatelessWidget {
@@ -15,7 +16,7 @@ class OrderItemCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(
-          color: lightVioletColor,
+          color: lightOrangeColor,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: violetColor),
         ),
@@ -31,33 +32,35 @@ class OrderItemCard extends StatelessWidget {
               child: Image.asset("asset/image/Chips.png"),
             ),
             const SizedBox(width: 10),
-            const Expanded(
+            Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomText(
+                  const CustomText(
                     text: "Your delivery",
-                    textSize: 16,
+                    textSize: 22,
                     fontWeight: FontWeight.w700,
                     color: Colors.black,
                   ),
-                  CustomText(
+                  const CustomText(
                     text: "Lays Chips Combo Pack",
-                    textSize: 12,
+                    textSize: 17,
                     fontWeight: FontWeight.w400,
                     color: Colors.black,
                   ),
-                  CustomText(
+                  VerticalSpacing(height: 5),
+                  const CustomText(
                     text: "Delivered in 05 minutes",
-                    textSize: 8,
+                    textSize: 13,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.purple,
+                  ),
+                  VerticalSpacing(height: 5),
+                  const CustomText(
+                    text: "₹105.99",
+                    textSize: 20,
                     fontWeight: FontWeight.w700,
                     color: violetColor,
-                  ),
-                  CustomText(
-                    text: "₹105.99",
-                    textSize: 15,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black,
                   ),
                 ],
               ),

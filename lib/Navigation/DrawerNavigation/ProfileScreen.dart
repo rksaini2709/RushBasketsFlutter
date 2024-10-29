@@ -21,7 +21,7 @@ class ProfileScreen extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const NavigationBottomScreen()));
+                      builder: (context) => const NavigationBottomScreen(initialIndex: 0,)));
             },
             icon: const Icon(Icons.arrow_back_ios)),
         title: const CustomText(
@@ -233,7 +233,7 @@ class ProfileScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        const NavigationBottomScreen()));
+                                        const NavigationBottomScreen(initialIndex: 0,)));
                           })),
                   HorizontalSpacing(width: 20),
                   Expanded(
@@ -247,7 +247,7 @@ class ProfileScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        const NavigationBottomScreen()));
+                                        const NavigationBottomScreen(initialIndex: 0,)));
                           }))
                 ],
               ),

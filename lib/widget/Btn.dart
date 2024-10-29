@@ -3,8 +3,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// Primary button that will appear when the condition is true
-// then it will be clickable otherwise it won't
 class PrimaryBtnWidget extends StatelessWidget {
   final String name;
   final double width;

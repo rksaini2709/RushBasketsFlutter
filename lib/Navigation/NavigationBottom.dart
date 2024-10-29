@@ -15,20 +15,28 @@ import '../widget/color.dart';
 import 'DrawerNavigation/ProfileScreen.dart';
 
 class NavigationBottomScreen extends StatefulWidget {
-  const NavigationBottomScreen({super.key});
+  final int initialIndex;
+  const NavigationBottomScreen({super.key, required this.initialIndex});
 
   @override
   _NavigationBottomScreenState createState() => _NavigationBottomScreenState();
 }
 
 class _NavigationBottomScreenState extends State<NavigationBottomScreen> {
-  int _currentIndex = 0;
-  final List<Widget> _pages = [
-    HomeScreen(),
-    CategoriesScreen(),
-    CartScreen(),
-    OrdersScreen(),
-  ];
+  late int _currentIndex;
+
+  @override
+  void initState(){
+    super.initState();
+    _currentIndex = widget.initialIndex;
+  }
+
+  // final List<Widget> _pages = [
+  //   HomeScreen(),
+  //   CategoriesScreen(),
+  //   CartScreen(),
+  //   const OrdersScreen(),
+  // ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -154,7 +162,7 @@ class _NavigationBottomScreenState extends State<NavigationBottomScreen> {
                           fontWeight: FontWeight.w400,
                           color: Colors.black),
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const OrdersScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const NavigationBottomScreen(initialIndex: 3)));
                       },
                     ),
                     ListTile(
@@ -247,10 +255,11 @@ class _NavigationBottomScreenState extends State<NavigationBottomScreen> {
         ),
       ),
       appBar: AppBar(
+        elevation: 0,
         title: const Row(
           children: [
-            CustomText(text: "Rush", textSize: 18, fontWeight: FontWeight.w700, color: Color(0xffEF8120)),
-            CustomText(text: "Baskets", textSize: 18, fontWeight: FontWeight.w700, color: Color(0xff194872)),
+            CustomText(text: "Rush", textSize: 25, fontWeight: FontWeight.w700, color: Color(0xffEF8120)),
+            CustomText(text: "Baskets", textSize: 25, fontWeight: FontWeight.w700, color: Color(0xff194872)),
           ],
         ),
         actions: [
@@ -284,7 +293,17 @@ class _NavigationBottomScreenState extends State<NavigationBottomScreen> {
           ),
         ],
       ),
-      body: _pages[_currentIndex],
+      body:
+      // _pages[_currentIndex],
+      IndexedStack(
+        index: _currentIndex,
+        children: [
+          HomeScreen(),
+          CategoriesScreen(),
+          CartScreen(),
+          const OrdersScreen(),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: const Color(0xffEF8120),

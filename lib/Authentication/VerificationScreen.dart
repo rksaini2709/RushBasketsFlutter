@@ -145,7 +145,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       ? () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => const NavigationBottomScreen()),
+                      MaterialPageRoute(builder: (context) => const NavigationBottomScreen(initialIndex: 0,)),
                     );
                   }
                       : null,

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rush_baskets/Authentication/LoginScreen.dart';
 import 'package:rush_baskets/Authentication/VerificationScreen.dart';
+import 'package:rush_baskets/Navigation/BottomNavigation/OrdersScreen.dart';
 import 'package:rush_baskets/Navigation/DrawerNavigation/HelpScreen.dart';
 import 'package:rush_baskets/Navigation/DrawerNavigation/ProfileScreen.dart';
 import 'package:rush_baskets/Navigation/DrawerNavigation/YourOrderScreen.dart';
