@@ -5,10 +5,10 @@ import 'package:rush_baskets/Navigation/BottomNavigation/CartScreen.dart';
 import 'package:rush_baskets/Navigation/BottomNavigation/CategoriesScreen.dart';
 import 'package:rush_baskets/Navigation/BottomNavigation/HomeScreen.dart';
 import 'package:rush_baskets/Navigation/BottomNavigation/OrdersScreen.dart';
+import 'package:rush_baskets/Navigation/DrawerNavigation/CouponScreen.dart';
 import 'package:rush_baskets/Navigation/DrawerNavigation/DeliverScreen.dart';
 import 'package:rush_baskets/Navigation/DrawerNavigation/HelpScreen.dart';
 import 'package:rush_baskets/Navigation/DrawerNavigation/PaymentsScreen.dart';
-import 'package:rush_baskets/Navigation/DrawerNavigation/YourOrderScreen.dart';
 import 'package:rush_baskets/widget/Text.dart';
 
 import '../widget/color.dart';
@@ -184,7 +184,7 @@ class _NavigationBottomScreenState extends State<NavigationBottomScreen> {
                           fontWeight: FontWeight.w400,
                           color: Colors.black),
                       onTap: () {
-                        //     Get.toNamed("/couponsScreen");
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const CouponScreen()));
                       },
                     ),
                     ListTile(

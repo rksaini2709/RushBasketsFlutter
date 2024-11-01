@@ -12,16 +12,16 @@ class PrimaryBtnWidget extends StatelessWidget {
   final Color textColor;
   final VoidCallback? onTap;
 
-  PrimaryBtnWidget({
-    Key? key,
+  const PrimaryBtnWidget({
+    super.key,
     required this.name,
     required this.width,
     this.height = 45,
-    this.btnTextSize = 25,
+    this.btnTextSize = 18,
     this.btnColor = const Color(0xffEF8120),
     this.textColor = CupertinoColors.white,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -55,7 +55,7 @@ class OrdersScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const TrackOrderScreeen()),
+                            builder: (context) => const TrackOrderScreen()),
                       );
                     },
                     child: const OrderItemCard(),

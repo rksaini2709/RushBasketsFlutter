@@ -53,7 +53,7 @@ class OrderItemCard extends StatelessWidget {
                     text: "Delivered in 05 minutes",
                     textSize: 13,
                     fontWeight: FontWeight.w700,
-                    color: Colors.purple,
+                    color: timeNotificationColor,
                   ),
                   VerticalSpacing(height: 5),
                   const CustomText(

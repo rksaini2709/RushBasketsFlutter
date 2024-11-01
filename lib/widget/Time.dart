@@ -1,14 +1,15 @@
-import 'package:flutter/cupertino.dart';
+// rush_baskets\lib\widget\Time.dart
+
+import 'package:flutter/material.dart';
 
 class TimelineItem extends StatelessWidget{
   final String status;
   final String time;
 
-  const TimelineItem({required this.status, required this.time});
+  const TimelineItem({super.key, required this.status, required this.time});
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return const Scaffold();
   }
 }

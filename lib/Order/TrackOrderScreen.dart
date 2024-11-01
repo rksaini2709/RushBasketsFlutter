@@ -1,21 +1,22 @@
-// rush_baskets\lib\Order\TrackOrderScreen.dart
-
 import 'package:flutter/material.dart';
 import 'package:rush_baskets/Navigation/NavigationBottom.dart';
+import 'package:rush_baskets/widget/HorizontalSpacing.dart';
 import 'package:rush_baskets/widget/Text.dart';
 import 'package:rush_baskets/widget/VerticalSpacing.dart';
 import 'package:rush_baskets/widget/color.dart';
 
-class TrackOrderScreeen extends StatelessWidget {
-  const TrackOrderScreeen({super.key});
+import '../widget/Time.dart';
+
+class TrackOrderScreen extends StatelessWidget {
+  const TrackOrderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final List<TimelineItem> items = [
-      TimelineItem(status: 'Ordered', time: '10 min ago'),
-      TimelineItem(status: 'Packed', time: '08 min ago'),
-      TimelineItem(status: 'Shipped', time: '06 min ago'),
-      TimelineItem(status: 'Delivery', time: '04 min ago'),
+      const TimelineItem(status: 'Ordered', time: '10 min ago'),
+      const TimelineItem(status: 'Packed', time: '08 min ago'),
+      const TimelineItem(status: 'Shipped', time: '06 min ago'),
+      const TimelineItem(status: 'Delivery', time: '04 min ago'),
     ];
 
     return Scaffold(
@@ -46,7 +47,8 @@ class TrackOrderScreeen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
         child: Container(
-          width: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          height: 517,
           decoration: BoxDecoration(
             border: Border.all(
               color: hintTextColor,
@@ -57,152 +59,154 @@ class TrackOrderScreeen extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 18, 20, 10),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 18, 20, 10),
+                    child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const CustomText(
-                            text: "Lays Chips Combo \nPack",
-                            textSize: 20,
-                            fontWeight: FontWeight.w800,
-                            color: Colors.black),
-                        const CustomText(
-                            text: "(total 8 packet in combo)",
-                            textSize: 15,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black),
-                        VerticalSpacing(height: 6),
-                        const CustomText(
-                            text: "1 best offer",
-                            textSize: 8,
-                            fontWeight: FontWeight.w700,
-                            color: darkBlueColor),
-                        Row(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const CustomText(
-                                text: "₹ 152.00",
-                                textSize: 18,
+                                text: "Lays Chips Combo pack",
+                                textSize: 20,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.black),
+                            const CustomText(
+                                text: "(total 8 packet in combo)",
+                                textSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black),
+                            VerticalSpacing(height: 6),
+                            const CustomText(
+                                text: "1 best offer",
+                                textSize: 8,
                                 fontWeight: FontWeight.w700,
-                                color: orangeColor),
-                            VerticalSpacing(height: 15),
-                            const Text(
-                              "₹ 160.00",
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.grey,
-                                decoration: TextDecoration.lineThrough,
+                                color: darkBlueColor),
+                            Row(
+                              children: [
+                                const CustomText(
+                                    text: "₹ 152.00",
+                                    textSize: 18,
+                                    fontWeight: FontWeight.w700,
+                                    color: orangeColor),
+                                HorizontalSpacing(width: 15),
+                                const Text(
+                                  "₹ 160.00",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.grey,
+                                    decoration:
+                                    TextDecoration.lineThrough,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            VerticalSpacing(height: 8),
+                            Container(
+                              width: 80,
+                              height: 20,
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 245, 174, 112),
+                                border: Border.all(
+                                  color: violetColor,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: const Center(
+                                child: CustomText(
+                                    text: "Quantity : 1",
+                                    textSize: 10,
+                                    fontWeight: FontWeight.w700,
+                                    color: violetColor),
                               ),
                             ),
                           ],
                         ),
-                        VerticalSpacing(height: 8),
                         Container(
-                          width: 80,
-                          height: 20,
                           decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 245, 174, 112),
-                            border: Border.all(
-                              color: violetColor,
+                              border: Border.all(
+                                color: Colors.black,
+                              ),
+                              borderRadius:
+                              const BorderRadius.all(Radius.circular(10))),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Image.asset(
+                              "asset/image/Chips.png",
+                              width: 70,
+                              height: 70,
                             ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: const Center(
-                            child: CustomText(
-                                text: "Quantity : 1",
-                                textSize: 10,
-                                fontWeight: FontWeight.w700,
-                                color: violetColor),
                           ),
                         ),
                       ],
                     ),
-                    Container(
-                      // width: 115,
-                      // height: 115,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                          ),
-                          borderRadius:
-                          const BorderRadius.all(Radius.circular(10))),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Image.asset(
-                          "asset/image/Chips.png",
-                          width: 70,
-                          height: 70,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const Divider(),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: SizedBox(
-                  height: 300,
-                  child: ListView.builder(
-                    itemCount: items.length,
-                    itemBuilder: (context, index) {
-                      return Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                  ),
+                  const Divider(),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: SizedBox(
+                      height: 270,
+                      child: ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: items.length,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              // Dot and Line
-                              Column(
-                                children: [
-                                  // Circle for step
-                                  Container(
-                                    width: 12,
-                                    height: 12,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.orange,
-                                      shape: BoxShape.circle,
-                                    ),
-                                  ),
-                                  // Line after the dot (skip last item)
-                                  if (index != items.length - 1)
-                                    Container(
-                                      width: 2,
-                                      height: 60,
-                                      color: Colors.orange,
-                                    ),
-                                ],
-                              ),
-                              const SizedBox(width: 16),
-                              // Status and Time
-                              Column(
+                              Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    items[index].status,
-                                    style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        width: 12,
+                                        height: 12,
+                                        decoration: const BoxDecoration(
+                                          color: Colors.orange,
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ),
+                                      if (index != items.length - 1)
+                                        Container(
+                                          width: 2,
+                                          height: 60,
+                                          color: Colors.orange,
+                                        ),
+                                    ],
                                   ),
-                                  Text(
-                                    items[index].time,
-                                    style: const TextStyle(
-                                        fontSize: 14, color: Colors.black54),
+                                  const SizedBox(width: 16),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        items[index].status,
+                                        style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        items[index].time,
+                                        style: const TextStyle(
+                                            fontSize: 14, color: Colors.black54),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
                             ],
-                          ),
-                        ],
-                      );
-                    },
+                          );
+                        },
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
               Row(
                 children: [
@@ -251,11 +255,4 @@ class TrackOrderScreeen extends StatelessWidget {
       ),
     );
   }
-}
-
-class TimelineItem {
-  final String status;
-  final String time;
-
-  TimelineItem({required this.status, required this.time});
 }

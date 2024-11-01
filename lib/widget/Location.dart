@@ -22,7 +22,7 @@ class locationWidget extends StatelessWidget {
             foregroundColor: orangeColor,
             child: Icon(
               Icons.location_on,
-              color: violetColor,
+              color: orangeColor,
             ),
           ),
           HorizontalSpacing(width: 10),

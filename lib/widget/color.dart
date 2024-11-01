@@ -8,6 +8,7 @@ const violetColor = Color(0xff194872);
 const lightVioletColor = Color(0xff86c3d7);
 const hintTextColor = Color(0xff808080);
 const darkBlueColor = Color(0xFF0000FF);
+const timeNotificationColor = Color(0xff23C552);
 // const primaryshadedColor = Color.fromARGB(255, 247, 185, 130);
 // const secondaryBgColor = Color(0xffF7F7F7);
 // const whiteColor = Colors.white;
