@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:rush_baskets/widget/Text.dart';
-import 'package:rush_baskets/widget/VerticalSpacing.dart';
 import 'package:rush_baskets/widget/color.dart';
 
+import '../../widget/Spacing.dart';
 import '../NavigationBottom.dart';
 
 class HelpScreen extends StatelessWidget {

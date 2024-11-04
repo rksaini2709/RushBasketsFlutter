@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rush_baskets/Authentication/LoginScreen.dart';
+import 'package:rush_baskets/widget/Images.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -11,7 +12,6 @@ class Splashscreen extends StatefulWidget {
 }
 
 class _SplashscreenState extends State<Splashscreen> {
-
   @override
   void initState() {
     super.initState();
@@ -21,9 +21,12 @@ class _SplashscreenState extends State<Splashscreen> {
           MaterialPageRoute(builder: (context) => const Loginscreen()));
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Image.asset("asset/icon/appIcon.png")));
+    return Scaffold(body: Center(child:
+        Image.asset("asset/icon/AppIcon.png")
+    // Image.asset(AssetsImages.appIcon)
+    ));
   }
 }

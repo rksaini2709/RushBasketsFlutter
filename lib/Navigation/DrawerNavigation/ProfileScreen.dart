@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rush_baskets/Navigation/NavigationBottom.dart';
 import 'package:rush_baskets/widget/Btn.dart';
-import 'package:rush_baskets/widget/HorizontalSpacing.dart';
 import 'package:rush_baskets/widget/Text.dart';
-import 'package:rush_baskets/widget/VerticalSpacing.dart';
 import 'package:rush_baskets/widget/color.dart';
+
+import '../../widget/Spacing.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -45,7 +45,8 @@ class ProfileScreen extends StatelessWidget {
                   Stack(children: [
                     const CircleAvatar(
                         radius: 50,
-                        backgroundImage: AssetImage("asset/image/Profile.png")),
+                        backgroundImage:
+                        AssetImage("asset/image/Profile.png")),
                     Positioned(
                       bottom: 8,
                       right: 8,

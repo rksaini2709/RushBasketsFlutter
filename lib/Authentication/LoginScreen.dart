@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rush_baskets/Authentication/VerificationScreen.dart';
 import 'package:rush_baskets/widget/Btn.dart';
-import 'package:rush_baskets/widget/HorizontalSpacing.dart';
-import 'package:rush_baskets/widget/VerticalSpacing.dart';
+import '../widget/Images.dart';
+import '../widget/Spacing.dart';
 import '../widget/Text.dart';
 import '../widget/color.dart';
 
@@ -47,9 +47,8 @@ class _LoginscreenState extends State<Loginscreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                "asset/image/Login.png",
-              ),
+              Image.asset("asset/image/Login.png"),
+              // Image.asset(AssetsImages.login),
               const CustomText(
                 text: "Login",
                 textSize: 25,
@@ -67,11 +66,9 @@ class _LoginscreenState extends State<Loginscreen> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
-                      child: Image.asset(
-                        "asset/icon/India.png",
-                        height: 24,
-                        width: 24,
-                      ),
+                      child:
+                      Image.asset("asset/icon/India.png"),
+                          // Image.asset(AssetsImages.india),
                     ),
                     const SizedBox(width: 8),
                     // Country code text
@@ -93,9 +90,12 @@ class _LoginscreenState extends State<Loginscreen> {
                         decoration: const InputDecoration(
                           hintText: "Enter your number",
                           hintStyle: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w400, color: hintTextColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: hintTextColor,
                           ),
-                          contentPadding: EdgeInsets.symmetric(vertical: 11, horizontal: 8),
+                          contentPadding:
+                              EdgeInsets.symmetric(vertical: 11, horizontal: 8),
                           border: InputBorder.none,
                         ),
                       ),
@@ -111,13 +111,13 @@ class _LoginscreenState extends State<Loginscreen> {
                   width: double.infinity,
                   onTap: isButtonEnabled
                       ? () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const VerificationScreen(),
-                      ),
-                    );
-                  }
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const VerificationScreen(),
+                            ),
+                          );
+                        }
                       : null,
                 ),
               ),

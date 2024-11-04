@@ -1,9 +1,10 @@
 // rush_baskets\lib\Order\OrderItemCard.dart
 
 import 'package:flutter/material.dart';
+import 'package:rush_baskets/widget/Images.dart';
 
+import '../widget/Spacing.dart';
 import '../widget/Text.dart';
-import '../widget/VerticalSpacing.dart';
 import '../widget/color.dart';
 
 class OrderItemCard extends StatelessWidget {
@@ -16,7 +17,7 @@ class OrderItemCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(
-          color: lightOrangeColor,
+          // color: lightOrangeColor,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: violetColor),
         ),
@@ -29,7 +30,9 @@ class OrderItemCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               padding: const EdgeInsets.all(8),
-              child: Image.asset("asset/image/Chips.png"),
+              child:
+              // Image.asset(AssetsImages.chips),
+              Image.asset("asset/image/Chips.png"),
             ),
             const SizedBox(width: 10),
             Expanded(

@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:rush_baskets/Navigation/NavigationBottom.dart';
 import 'package:rush_baskets/widget/Text.dart';
-import 'package:rush_baskets/widget/VerticalSpacing.dart';
 import 'package:rush_baskets/widget/color.dart';
 
-import '../../widget/HorizontalSpacing.dart';
+import '../../widget/Images.dart';
+import '../../widget/Spacing.dart';
 
 class CouponScreen extends StatelessWidget {
   const CouponScreen({super.key});
@@ -47,7 +47,7 @@ class CouponScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10)),
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -58,7 +58,7 @@ class CouponScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         padding: const EdgeInsets.all(8),
-                        child: Image.asset("asset/image/Chips.png"),
+                        child: Image.asset(AssetsImages.chips),
                       ),
                       HorizontalSpacing(width: 20),
                       const Divider(),

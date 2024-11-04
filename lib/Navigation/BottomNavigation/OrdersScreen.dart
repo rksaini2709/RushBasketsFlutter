@@ -5,7 +5,7 @@ import 'package:rush_baskets/Order/TrackOrderScreen.dart';
 
 import '../../Order/OrderItemCard.dart';
 import '../../widget/Location.dart';
-import '../../widget/VerticalSpacing.dart';
+import '../../widget/Spacing.dart';
 import '../../widget/color.dart';
 
 class OrdersScreen extends StatelessWidget {
@@ -15,7 +15,7 @@ class OrdersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(15, 15, 15, 15),
+        padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
         child: Column(
           children: [
             const locationWidget(),

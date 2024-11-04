@@ -56,7 +56,7 @@ class _NavigationBottomScreenState extends State<NavigationBottomScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Image.asset("asset/icon/appIcon.png"),
+                  Image.asset("asset/icon/AppIcon.png"),
                 ],
               ),
             ),
@@ -270,25 +270,40 @@ class _NavigationBottomScreenState extends State<NavigationBottomScreen> {
                 size: 25,
               ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(right: 25, left: 25),
-            child: SizedBox(
-              child: Icon(
+          Padding(
+            padding: const EdgeInsets.only(right: 25, left: 25),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NavigationBottomScreen(initialIndex: 2)),
+                );
+              },
+              child: const SizedBox(
+                child: Icon(
                   Icons.favorite,
                   color: Color(0xffEF8120),
                   size: 25,
                 ),
+              ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 15),
             child: CircleAvatar(
               radius: 20,
-              child: Image.asset(
-                "asset/image/Profile.png",
-                // width: 20, // Adjust image width
-                // height: 20, // Adjust image height
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ProfileScreen()),
+                  );
+                },
+                child: Image.asset(
+                  "asset/image/Profile.png",
+                ),
               ),
+
             ),
           ),
         ],
@@ -300,7 +315,7 @@ class _NavigationBottomScreenState extends State<NavigationBottomScreen> {
         children: [
           HomeScreen(),
           CategoriesScreen(),
-          CartScreen(),
+          const CartScreen(),
           const OrdersScreen(),
         ],
       ),

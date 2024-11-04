@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:rush_baskets/widget/Text.dart';
 import 'package:rush_baskets/widget/color.dart';
 
-import 'HorizontalSpacing.dart';
+import 'Spacing.dart';
 
 class locationWidget extends StatelessWidget {
   const locationWidget({
@@ -19,7 +19,7 @@ class locationWidget extends StatelessWidget {
         children: [
           const CircleAvatar(
             radius: 20,
-            foregroundColor: orangeColor,
+            foregroundColor: hintTextColor,
             child: Icon(
               Icons.location_on,
               color: orangeColor,

@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rush_baskets/Authentication/LoginScreen.dart';
 import 'package:rush_baskets/Authentication/VerificationScreen.dart';
+import 'package:rush_baskets/Cart/SingleItem.dart';
+import 'package:rush_baskets/Navigation/BottomNavigation/CartScreen.dart';
+import 'package:rush_baskets/Navigation/BottomNavigation/HomeScreen.dart';
 import 'package:rush_baskets/Navigation/BottomNavigation/OrdersScreen.dart';
 import 'package:rush_baskets/Navigation/DrawerNavigation/CouponScreen.dart';
 import 'package:rush_baskets/Navigation/DrawerNavigation/HelpScreen.dart';
@@ -28,7 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NavigationBottomScreen(initialIndex: 0)
+      home: Splashscreen()
     );
   }
 }

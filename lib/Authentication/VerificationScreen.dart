@@ -1,12 +1,14 @@
 //rush_baskets\lib\Authentication\VerificationScreen.dart
 
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
 import 'package:rush_baskets/Navigation/NavigationBottom.dart';
 import 'package:rush_baskets/widget/Btn.dart';
-import 'package:rush_baskets/widget/VerticalSpacing.dart';
+import '../widget/Images.dart';
+import '../widget/Spacing.dart';
 import '../widget/Text.dart';
 import '../widget/color.dart';
 
@@ -21,7 +23,6 @@ class _VerificationScreenState extends State<VerificationScreen> {
   String errorMessage = '';
   int _timerSeconds = 0;
   Timer? _timer;
-  // Variable to control button state
   bool isOtpValid = false;
 
   void verifyOTP(String pin) {
@@ -29,14 +30,14 @@ class _VerificationScreenState extends State<VerificationScreen> {
     if (pin == correctOTP) {
       setState(() {
         errorMessage = '';
-        // Enable button if OTP is correct
         isOtpValid = true;
       });
-      print("OTP Verified");
+      if (kDebugMode) {
+        print("OTP Verified");
+      }
     } else {
       setState(() {
         errorMessage = "Invalid OTP";
-        // Disable button if OTP is incorrect
         isOtpValid = false;
       });
     }
@@ -72,6 +73,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // Image.asset(AssetsImages.verification),
               Image.asset("asset/image/Verification.png"),
               const CustomText(
                 text: "Phone Verification",

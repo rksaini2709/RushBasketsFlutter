@@ -2,6 +2,9 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rush_baskets/widget/color.dart';
+
+// PrimaryBtnWidget
 
 class PrimaryBtnWidget extends StatelessWidget {
   final String name;
@@ -18,7 +21,7 @@ class PrimaryBtnWidget extends StatelessWidget {
     required this.width,
     this.height = 45,
     this.btnTextSize = 18,
-    this.btnColor = const Color(0xffEF8120),
+    this.btnColor = orangeColor,
     this.textColor = CupertinoColors.white,
     this.onTap,
   });
@@ -38,6 +41,11 @@ class PrimaryBtnWidget extends StatelessWidget {
     );
   }
 }
+
+
+
+
+// SecondaryBtnWidget
 
 class SecondaryBtnWidget extends StatelessWidget {
   final String name;
