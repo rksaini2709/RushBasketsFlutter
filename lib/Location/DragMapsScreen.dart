@@ -4,14 +4,14 @@ import 'package:rush_baskets/Buy/BuyScreen.dart';
 import '../widget/Text.dart';
 import '../widget/color.dart';
 
-class DragMaps extends StatefulWidget {
-  const DragMaps({super.key});
+class DragMapsScreen extends StatefulWidget {
+  const DragMapsScreen({super.key});
 
   @override
-  State<DragMaps> createState() => _DragMapsState();
+  State<DragMapsScreen> createState() => _DragMapsScreenState();
 }
 
-class _DragMapsState extends State<DragMaps> {
+class _DragMapsScreenState extends State<DragMapsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

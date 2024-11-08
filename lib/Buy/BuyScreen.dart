@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rush_baskets/Cart/SingleItem.dart';
+import 'package:rush_baskets/Cart/SingleItemScreen.dart';
 import 'package:rush_baskets/Location/SelectAddress.dart';
 import 'package:rush_baskets/widget/Spacing.dart';
 import 'package:rush_baskets/widget/Text.dart';

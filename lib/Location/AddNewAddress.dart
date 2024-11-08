@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rush_baskets/Location/DragMaps.dart';
-import 'package:rush_baskets/Paymant/Pay.dart';
+import 'package:rush_baskets/Location/DragMapsScreen.dart';
+import 'package:rush_baskets/Paymant/PayScreen.dart';
 import 'package:rush_baskets/widget/Btn.dart';
 
 import '../widget/Spacing.dart';
@@ -23,7 +23,7 @@ class AddNewAddress extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const DragMaps()),
+                  MaterialPageRoute(builder: (context) => const DragMapsScreen()),
                 );
               },
               child: Container(

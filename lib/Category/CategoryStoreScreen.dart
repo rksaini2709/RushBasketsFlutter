@@ -1,4 +1,4 @@
-// rush_baskets\lib\Category\CategoryStore.dart
+// rush_baskets\lib\Category\CategoryStoreScreen.dart
 
 import 'package:flutter/material.dart';
 import 'package:rush_baskets/Category/CategoryDetails.dart';
@@ -10,8 +10,8 @@ import '../Location/SelectAddress.dart';
 import '../widget/Btn.dart';
 import '../widget/Text.dart';
 
-class CategoryStore extends StatelessWidget {
-  const CategoryStore({super.key});
+class CategoryStoreScreen extends StatelessWidget {
+  const CategoryStoreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

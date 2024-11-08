@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rush_baskets/widget/Search.dart';
 import 'package:rush_baskets/widget/Spacing.dart';
 import '../../Category/CategoryCard.dart';
-import '../../Category/CategoryStore.dart';
+import '../../Category/CategoryStoreScreen.dart';
 import '../../widget/Location.dart';
 
 class CategoriesScreen extends StatelessWidget {
@@ -47,7 +47,7 @@ class CategoriesScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const CategoryStore(),
+                          builder: (context) => const CategoryStoreScreen(),
                         ),
                       );
                     },

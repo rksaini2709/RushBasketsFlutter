@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:rush_baskets/Authentication/LoginScreen.dart';
 import 'package:rush_baskets/Authentication/VerificationScreen.dart';
 import 'package:rush_baskets/Buy/BuyScreen.dart';
-import 'package:rush_baskets/Cart/SingleItem.dart';
-import 'package:rush_baskets/Category/CategoryStore.dart';
+import 'package:rush_baskets/Cart/SingleItemScreen.dart';
+import 'package:rush_baskets/Category/CategoryStoreScreen.dart';
 import 'package:rush_baskets/Navigation/BottomNavigation/CartScreen.dart';
 import 'package:rush_baskets/Navigation/BottomNavigation/HomeScreen.dart';
 import 'package:rush_baskets/Navigation/BottomNavigation/OrdersScreen.dart';
@@ -14,7 +14,7 @@ import 'package:rush_baskets/Navigation/DrawerNavigation/CouponScreen.dart';
 import 'package:rush_baskets/Navigation/DrawerNavigation/HelpScreen.dart';
 import 'package:rush_baskets/Navigation/DrawerNavigation/ProfileScreen.dart';
 import 'package:rush_baskets/Order/TrackOrderScreen.dart';
-import 'package:rush_baskets/Paymant/Pay.dart';
+import 'package:rush_baskets/Paymant/PayScreen.dart';
 import 'package:rush_baskets/SplashScreen.dart';
 import 'package:rush_baskets/widget/IncreDecreMentItem.dart';
 import 'package:rush_baskets/widget/ItemView.dart';
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NavigationBottomScreen(initialIndex: 0)
+      home: CategoryStoreScreen()
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rush_baskets/Paymant/Pay.dart';
+import 'package:rush_baskets/Paymant/PayScreen.dart';
 import 'package:rush_baskets/widget/Spacing.dart';
 import 'package:rush_baskets/widget/Text.dart';
 import '../widget/color.dart';
