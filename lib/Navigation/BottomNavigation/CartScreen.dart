@@ -1,11 +1,12 @@
-// rush_baskets\lib\Cart\CartItemCard.dart
-
 import 'package:flutter/material.dart';
+import 'package:rush_baskets/Buy/BuyScreen.dart';
 import 'package:rush_baskets/Cart/CartItemCard.dart';
-import 'package:rush_baskets/Cart/SingleItem.dart';
 import 'package:rush_baskets/widget/Spacing.dart';
+import 'package:rush_baskets/widget/Text.dart';
 import 'package:rush_baskets/widget/color.dart';
 
+import '../../Buy/BillDetails.dart';
+import '../../Location/SelectAddress.dart';
 import '../../widget/Btn.dart';
 import '../../widget/Location.dart';
 
@@ -36,7 +37,7 @@ class CartScreen extends StatelessWidget {
                         color: orangeColor,
                       ),
                       hintText: "Search.....",
-                      hintStyle: customTextStyle(14, FontWeight.w400, hintTextColor),
+                      hintStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: hintTextColor),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: const BorderSide(color: violetColor),
@@ -49,18 +50,19 @@ class CartScreen extends StatelessWidget {
             ),
           ),
           const Divider(),
-          // Scrollable area containing item list and bill details
           Expanded(
             child: SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
-                    Align(
+                    const Align(
                       alignment: Alignment.topRight,
-                      child: Text(
-                        "Clear all items",
-                        style: customTextStyle(12, FontWeight.w800, violetColor),
+                      child: CustomText(
+                        text: "Clear all items",
+                        textSize: 12,
+                        fontWeight: FontWeight.w800,
+                        color: violetColor,
                       ),
                     ),
                     ListView.builder(
@@ -72,7 +74,7 @@ class CartScreen extends StatelessWidget {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const SingleItem()),
+                              MaterialPageRoute(builder: (context) => const BuyScreen()),
                             );
                           },
                           child: CartItemCard(index: index),
@@ -80,148 +82,9 @@ class CartScreen extends StatelessWidget {
                       },
                     ),
                     VerticalSpacing(height: 10),
+
                     // Bill details section
-                    Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(color: violetColor, width: 2),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Bill details",
-                                  style: customTextStyle(14, FontWeight.w700, Colors.black),
-                                ),
-                                VerticalSpacing(height: 10),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        const Icon(Icons.shopping_bag),
-                                        HorizontalSpacing(width: 5),
-                                        Text(
-                                          "Items total",
-                                          style: customTextStyle(10, FontWeight.w400, Colors.black),
-                                        ),
-                                        Container(
-                                          decoration: BoxDecoration(
-                                              color: const Color(0xffFFFF04),
-                                              borderRadius: BorderRadius.circular(10)),
-                                          child: Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 0),
-                                            child: Text(
-                                              "Saved ₹76",
-                                              style: customTextStyle(8, FontWeight.w400, Colors.black),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    const Row(
-                                      children: [
-                                        Text(
-                                          "₹ 160.00",
-                                          style: TextStyle(
-                                            fontSize: 8,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black,
-                                            decoration: TextDecoration.lineThrough,
-                                          ),
-                                        ),
-                                        SizedBox(width: 5),
-                                        Text(
-                                          "₹ 152.00",
-                                          style: TextStyle(
-                                              fontSize: 8,
-                                              fontWeight: FontWeight.w400,
-                                              color: Colors.black),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        const Icon(Icons.delivery_dining),
-                                        HorizontalSpacing(width: 5),
-                                        Text(
-                                          "Delivery charge",
-                                          style: customTextStyle(10, FontWeight.w400, Colors.black),
-                                        ),
-                                      ],
-                                    ),
-                                    const Row(
-                                      children: [
-                                        Text(
-                                          "₹ 25",
-                                          style: TextStyle(
-                                            fontSize: 8,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black,
-                                            decoration: TextDecoration.lineThrough,
-                                          ),
-                                        ),
-                                        SizedBox(width: 5),
-                                        Text(
-                                          "FREE",
-                                          style: TextStyle(
-                                              fontSize: 8,
-                                              fontWeight: FontWeight.w400,
-                                              color: Colors.black),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                          const Divider(color: violetColor, thickness: 2),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-                            child: Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Grand total",
-                                      style: customTextStyle(12, FontWeight.w700, Colors.black),
-                                    ),
-                                    Text(
-                                      "₹501.99",
-                                      style: customTextStyle(12, FontWeight.w700, Colors.black),
-                                    )
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Your total savings",
-                                      style: customTextStyle(12, FontWeight.w700, Colors.black),
-                                    ),
-                                    Text(
-                                      "+57.00",
-                                      style: customTextStyle(12, FontWeight.w700, Colors.black),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    const BillDetails(),
                     VerticalSpacing(height: 20),
                     PrimaryBtnWidget(
                       name: "Buy Now",
@@ -230,7 +93,21 @@ class CartScreen extends StatelessWidget {
                       btnTextSize: 15,
                       textColor: Colors.white,
                       btnColor: orangeColor,
-                      onTap: () {},
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(15),
+                              topRight: Radius.circular(15),
+                            ),
+                          ),
+                          builder: (BuildContext context) {
+                            return const SingleChildScrollView(child: SelectAddress());
+                          },
+                        );
+                      },
                     ),
                     VerticalSpacing(height: 20),
                   ],
@@ -241,9 +118,5 @@ class CartScreen extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  TextStyle customTextStyle(double size, FontWeight weight, Color color) {
-    return TextStyle(fontWeight: weight, fontSize: size, color: color);
   }
 }

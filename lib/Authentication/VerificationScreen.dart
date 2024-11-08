@@ -97,6 +97,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 style: const TextStyle(fontSize: 17),
                 textFieldAlignment: MainAxisAlignment.center,
                 fieldStyle: FieldStyle.box,
+                keyboardType: TextInputType.number,
                 onCompleted: verifyOTP,
               ),
               if (errorMessage.isNotEmpty) ...[

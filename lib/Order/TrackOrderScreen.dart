@@ -52,7 +52,6 @@ class TrackOrderScreen extends StatelessWidget {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 460,
               decoration: BoxDecoration(
                 border: Border.all(
                   color: hintTextColor,
@@ -65,7 +64,7 @@ class TrackOrderScreen extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(20, 18, 20, 10),
+                        padding: const EdgeInsets.fromLTRB(20, 18, 18, 10),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -155,7 +154,7 @@ class TrackOrderScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: SizedBox(
-                          height: 270,
+                          height: 290,
                           child: ListView.builder(
                             physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
