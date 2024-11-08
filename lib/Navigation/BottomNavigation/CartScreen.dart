@@ -9,6 +9,7 @@ import '../../Buy/BillDetails.dart';
 import '../../Location/SelectAddress.dart';
 import '../../widget/Btn.dart';
 import '../../widget/Location.dart';
+import '../../widget/Search.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -24,27 +25,7 @@ class CartScreen extends StatelessWidget {
               children: [
                 const locationWidget(),
                 VerticalSpacing(height: 20),
-                SizedBox(
-                  height: 45,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      prefixIcon: const Icon(
-                        Icons.search,
-                        color: orangeColor,
-                      ),
-                      suffixIcon: const Icon(
-                        Icons.mic,
-                        color: orangeColor,
-                      ),
-                      hintText: "Search.....",
-                      hintStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: hintTextColor),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(color: violetColor),
-                      ),
-                    ),
-                  ),
-                ),
+                const Search(),
                 VerticalSpacing(height: 10),
               ],
             ),

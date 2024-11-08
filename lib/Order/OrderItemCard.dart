@@ -8,7 +8,9 @@ import '../widget/Text.dart';
 import '../widget/color.dart';
 
 class OrderItemCard extends StatelessWidget {
-  const OrderItemCard({super.key});
+  final int index;
+
+  const OrderItemCard({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class OrderItemCard extends StatelessWidget {
         decoration: BoxDecoration(
           // color: lightOrangeColor,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: violetColor),
+          border: Border.all(color: index % 2 == 0 ? orangeColor : violetColor),
         ),
         child: Row(
           children: [

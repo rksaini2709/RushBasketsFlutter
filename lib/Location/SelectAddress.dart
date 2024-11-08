@@ -37,10 +37,12 @@ class _SelectAddressState extends State<SelectAddress> {
                 isScrollControlled: true,
                 isDismissible: true,
                 shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
-                  ),
+                  borderRadius:
+                  BorderRadius.vertical(top: Radius.circular(15.0)),
+                  // borderRadius: BorderRadius.only(
+                  //   topLeft: Radius.circular(15),
+                  //   topRight: Radius.circular(15),
+                  // ),
                 ),
                 builder: (BuildContext context) {
                   return const SingleChildScrollView(

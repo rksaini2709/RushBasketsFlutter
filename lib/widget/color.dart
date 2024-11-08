@@ -9,3 +9,5 @@ const lightVioletColor = Color(0xff86c3d7);
 const hintTextColor = Color(0xff808080);
 const darkBlueColor = Color(0xFF0000FF);
 const timeNotificationColor = Color(0xff23C552);
+const whiteColor = Color(0xffffffff);
+const blackColor = Color(0xff000000);

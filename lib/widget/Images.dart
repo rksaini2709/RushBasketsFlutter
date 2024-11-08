@@ -15,6 +15,7 @@ class AssetsImages {
   static const chips = "$imagesPath/Chips.png";
   static const vegetable = "$imagesPath/vegetables.png";
   static const honey = "$imagesPath/honey.png";
+  static const creditCard = "$imagesPath/CreditCard.png";
 
   // Function to get image with specified size
   static Widget getImage(String assetName, {required double width, required double height}) {

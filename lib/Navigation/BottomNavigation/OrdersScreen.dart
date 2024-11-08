@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rush_baskets/Order/TrackOrderScreen.dart';
+import 'package:rush_baskets/widget/Search.dart';
 
 import '../../Order/OrderItemCard.dart';
 import '../../widget/Location.dart';
@@ -20,31 +21,9 @@ class OrdersScreen extends StatelessWidget {
           children: [
             const locationWidget(),
             VerticalSpacing(height: 20),
-            SizedBox(
-              height: 45,
-              child: TextFormField(
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(
-                    Icons.search,
-                    color: orangeColor,
-                  ),
-                  suffixIcon: const Icon(
-                    Icons.mic,
-                    color: orangeColor,
-                  ),
-                  hintText: "Search.....",
-                  hintStyle:
-                      customTextStyle(14, FontWeight.w400, hintTextColor),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: violetColor),
-                  ),
-                ),
-                onChanged: (value) {
-                  // Implement search logic here
-                },
-              ),
-            ),
+
+            // search Widget
+            const Search(),
             VerticalSpacing(height: 20),
             Expanded(
               child: ListView.builder(
@@ -58,7 +37,7 @@ class OrdersScreen extends StatelessWidget {
                             builder: (context) => const TrackOrderScreen()),
                       );
                     },
-                    child: const OrderItemCard(),
+                    child: OrderItemCard(index: index),
                   );
                 },
               ),
