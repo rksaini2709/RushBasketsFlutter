@@ -1,12 +1,10 @@
 // rush_baskets\lib\Cart\CartItemCard.dart
 
 import 'package:flutter/material.dart';
-import '../widget/Btn.dart';
-import '../widget/Images.dart';
-import '../widget/IncreDecreMentItem.dart';
-import '../widget/Spacing.dart';
-import '../widget/Text.dart';
-import '../widget/color.dart';
+import '../../../widget/IncreDecreMentItem.dart';
+import '../../../widget/Spacing.dart';
+import '../../../widget/Text.dart';
+import '../../../widget/color.dart';
 
 class CartItemCard extends StatelessWidget {
   final int index;

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:rush_baskets/Cart/SingleItemScreen.dart';
 import 'package:rush_baskets/Location/SelectAddress.dart';
 import 'package:rush_baskets/widget/Spacing.dart';
 import 'package:rush_baskets/widget/Text.dart';
 
+import '../Navigation/BottomNavigation/Cart/SingleItemScreen.dart';
 import '../Navigation/NavigationBottom.dart';
 import '../widget/Btn.dart';
-import '../widget/ViewMore.dart';
+import '../widget/ViewMoreItem.dart';
 import '../widget/color.dart';
 import 'BillDetails.dart';
 
@@ -56,8 +56,10 @@ class _BuyScreenState extends State<BuyScreen> {
                 padding: const EdgeInsets.all(15.0),
                 child: Column(
                   children: [
+
+                    // Single Item Card
                     const SingleItem(),
-                    VerticalSpacing(height: 15),
+                    VerticalSpacing(height: 10),
 
                     // You May Also Like Section
                     Padding(
@@ -76,7 +78,7 @@ class _BuyScreenState extends State<BuyScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const ViewMore(),
+                                  builder: (context) => const ViewMoreItem(),
                                 ),
                               );
                             },
@@ -92,12 +94,11 @@ class _BuyScreenState extends State<BuyScreen> {
                     ),
 
                     // View more item
-                    const ViewMore(),
+                    const ViewMoreItem(),
                     VerticalSpacing(height: 8),
 
                     // Bill Slip
                     const BillDetails(),
-
                     VerticalSpacing(height: 10),
                   ],
                 ),

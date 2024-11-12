@@ -5,9 +5,8 @@ import 'package:rush_baskets/Navigation/NavigationBottom.dart';
 import 'package:rush_baskets/widget/Text.dart';
 import 'package:rush_baskets/widget/color.dart';
 
-import '../widget/Images.dart';
-import '../widget/Spacing.dart';
-import '../widget/Time.dart';
+import '../../../widget/Spacing.dart';
+import '../../../widget/Time.dart';
 
 class TrackOrderScreen extends StatelessWidget {
   const TrackOrderScreen({super.key});

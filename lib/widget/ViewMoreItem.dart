@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'ProductCard.dart';
 
-class ViewMore extends StatelessWidget {
-  const ViewMore({super.key});
+class ViewMoreItem extends StatelessWidget {
+  const ViewMoreItem({super.key});
 
   @override
   Widget build(BuildContext context) {

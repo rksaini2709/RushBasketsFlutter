@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../widget/Spacing.dart';
+import '../../../widget/Spacing.dart';
 import 'CategoryStoreItem.dart';
 
 class CategoryDetails extends StatelessWidget {
@@ -8,7 +8,8 @@ class CategoryDetails extends StatelessWidget {
   final String oldPrice;
   final String newPrice;
   final int ratingCount;
-  final bool isAddToCart;
+  final bool buyNow;
+  final Function(int, double) updateCart;
 
   const CategoryDetails({
     super.key,
@@ -16,7 +17,8 @@ class CategoryDetails extends StatelessWidget {
     required this.oldPrice,
     required this.newPrice,
     required this.ratingCount,
-    this.isAddToCart = false,
+    this.buyNow = false,
+    required this.updateCart,
   });
 
   @override
@@ -29,8 +31,9 @@ class CategoryDetails extends StatelessWidget {
             oldPrice: oldPrice,
             newPrice: newPrice,
             ratingCount: ratingCount,
-            isAddToCart: isAddToCart,
+            buyNow: buyNow,
             imagePath: '',
+            updateCart: updateCart,
           ),
         ),
         HorizontalSpacing(width: 10),
@@ -40,8 +43,9 @@ class CategoryDetails extends StatelessWidget {
             oldPrice: oldPrice,
             newPrice: newPrice,
             ratingCount: ratingCount,
-            isAddToCart: isAddToCart,
+            buyNow: buyNow,
             imagePath: '',
+            updateCart: updateCart,
           ),
         ),
       ],

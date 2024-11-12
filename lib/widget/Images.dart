@@ -7,6 +7,7 @@ class AssetsImages {
 // Icon Image
   static const appIcon = "$iconsPath/AppIcon.png";
   static const india = "$iconsPath/India.png";
+  static const grocery = "$iconsPath/Grocery.png";
 
 // PNG Image
   static const login = "$imagesPath/Login.png";

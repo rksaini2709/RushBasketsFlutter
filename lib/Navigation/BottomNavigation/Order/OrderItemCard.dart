@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:rush_baskets/widget/Images.dart';
 
-import '../widget/Spacing.dart';
-import '../widget/Text.dart';
-import '../widget/color.dart';
+import '../../../widget/Spacing.dart';
+import '../../../widget/Text.dart';
+import '../../../widget/color.dart';
 
 class OrderItemCard extends StatelessWidget {
   final int index;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:rush_baskets/widget/Search.dart';
 import 'package:rush_baskets/widget/Spacing.dart';
-import '../../Category/CategoryCard.dart';
-import '../../Category/CategoryStoreScreen.dart';
-import '../../widget/Location.dart';
+import '../../../widget/Location.dart';
+import 'CategoryCard.dart';
+import 'CategoryStoreScreen.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});

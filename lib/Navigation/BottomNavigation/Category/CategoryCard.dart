@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rush_baskets/widget/color.dart';
 
-import '../widget/Text.dart';
+import '../../../widget/Text.dart';
 
 class CategoryCard extends StatelessWidget {
   final String imageUrl;

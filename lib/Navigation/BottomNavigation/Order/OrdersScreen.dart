@@ -1,13 +1,13 @@
 // rush_baskets\lib\Navigation\BottomNavigation\OrdersScreen.dart
 
 import 'package:flutter/material.dart';
-import 'package:rush_baskets/Order/TrackOrderScreen.dart';
 import 'package:rush_baskets/widget/Search.dart';
 
-import '../../Order/OrderItemCard.dart';
-import '../../widget/Location.dart';
-import '../../widget/Spacing.dart';
-import '../../widget/color.dart';
+import '../../../widget/Location.dart';
+import '../../../widget/Spacing.dart';
+import '../../../widget/color.dart';
+import 'OrderItemCard.dart';
+import 'TrackOrderScreen.dart';
 
 class OrdersScreen extends StatelessWidget {
   const OrdersScreen({super.key});

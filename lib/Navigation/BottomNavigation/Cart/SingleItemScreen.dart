@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:rush_baskets/widget/ItemView.dart';
 import 'package:rush_baskets/widget/Spacing.dart';
 import 'package:rush_baskets/widget/Text.dart';
-import 'package:rush_baskets/widget/ViewMore.dart';
-import '../widget/Btn.dart';
-import '../widget/IncreDecreMentItem.dart';
-import '../widget/color.dart';
+import 'package:rush_baskets/widget/ViewMoreItem.dart';
+import '../../../widget/IncreDecreMentItem.dart';
+import '../../../widget/color.dart';
 
 class SingleItem extends StatelessWidget {
   const SingleItem({super.key});

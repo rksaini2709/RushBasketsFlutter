@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:rush_baskets/widget/Btn.dart';
 import 'package:rush_baskets/widget/Text.dart';
-import '../widget/Spacing.dart';
-import '../widget/color.dart';
+import '../../../widget/Spacing.dart';
+import '../../../widget/color.dart';
 
 class CategoryStoreItem extends StatefulWidget {
   final String title;
   final String oldPrice;
   final String newPrice;
   final int ratingCount;
-  final bool isAddToCart;
+  final bool buyNow;
   final String imagePath;
+  final Function(int, double) updateCart;
 
   const CategoryStoreItem({
     super.key,
@@ -18,8 +19,9 @@ class CategoryStoreItem extends StatefulWidget {
     required this.oldPrice,
     required this.newPrice,
     required this.ratingCount,
-    this.isAddToCart = false,
+    this.buyNow = false,
     required this.imagePath,
+    required this.updateCart,
   });
 
   @override
@@ -37,28 +39,34 @@ class _CategoryStoreItemState extends State<CategoryStoreItem> {
     });
   }
 
-  void addToCart() {
+  void buy() {
     setState(() {
       inCart = true;
       itemCount = 1;
     });
+    widget.updateCart(itemCount, double.parse(widget.newPrice.replaceAll('₹', '')));
   }
 
   void incrementItem() {
     setState(() {
       itemCount++;
     });
+    widget.updateCart(1, double.parse(widget.newPrice.replaceAll('₹', '')));
   }
 
   void decrementItem() {
-    setState(() {
-      if (itemCount > 1) {
+    if (itemCount > 0) {
+      setState(() {
         itemCount--;
-      } else {
+      });
+      widget.updateCart(-1, double.parse(widget.newPrice.replaceAll('₹', '')));
+    }
+
+    if (itemCount == 0) {
+      setState(() {
         inCart = false;
-        itemCount = 0;
-      }
-    });
+      });
+    }
   }
 
   @override
@@ -73,28 +81,32 @@ class _CategoryStoreItemState extends State<CategoryStoreItem> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+            Stack(
+              alignment: Alignment.topRight,
               children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: Center(
+                    child: Image.asset(
+                      "asset/image/honey.png",
+                      // widget.imagePath,
+                      width: 150,
+                      height: 150,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
                 IconButton(
-                  onPressed: toggleFavorite,
                   icon: Icon(
                     isFavorite ? Icons.favorite : Icons.favorite_border,
                     color: isFavorite ? Colors.red : Colors.black,
                   ),
+                  onPressed: toggleFavorite,
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
                 ),
               ],
             ),
-            VerticalSpacing(height: 10),
-            Center(
-              child: Image.asset(
-                "asset/image/honey.png",
-                height: 100,
-                // width: 110,
-                fit: BoxFit.contain,
-              ),
-            ),
-            VerticalSpacing(height: 10),
             Center(
               child: CustomText(
                 text: widget.title,
@@ -105,8 +117,7 @@ class _CategoryStoreItemState extends State<CategoryStoreItem> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10, top: 10),
-              child:
-              Text(
+              child: Text(
                 widget.oldPrice,
                 style: const TextStyle(decoration: TextDecoration.lineThrough),
               ),
@@ -119,7 +130,7 @@ class _CategoryStoreItemState extends State<CategoryStoreItem> {
                     text: widget.newPrice,
                     textSize: 18,
                     fontWeight: FontWeight.w800,
-                    color: orangeColor,
+                    color: violetColor,
                   ),
                   const Spacer(),
                   Row(
@@ -142,7 +153,7 @@ class _CategoryStoreItemState extends State<CategoryStoreItem> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 5),
               child: inCart
                   ? Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -171,13 +182,13 @@ class _CategoryStoreItemState extends State<CategoryStoreItem> {
               )
                   : Center(
                 child: PrimaryBtnWidget(
-                  name: "Add to cart",
+                  name: "Buy",
                   width: 150,
                   height: 35,
                   btnTextSize: 14,
                   textColor: whiteColor,
                   btnColor: orangeColor,
-                  onTap: addToCart,
+                  onTap: buy,
                 ),
               ),
             ),

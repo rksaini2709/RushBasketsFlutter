@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:rush_baskets/Buy/BuyScreen.dart';
-import 'package:rush_baskets/Cart/CartItemCard.dart';
 import 'package:rush_baskets/widget/Spacing.dart';
 import 'package:rush_baskets/widget/Text.dart';
 import 'package:rush_baskets/widget/color.dart';
 
-import '../../Buy/BillDetails.dart';
-import '../../Location/SelectAddress.dart';
-import '../../widget/Btn.dart';
-import '../../widget/Location.dart';
-import '../../widget/Search.dart';
+import '../../../Buy/BillDetails.dart';
+import '../../../Location/SelectAddress.dart';
+import '../../../widget/Btn.dart';
+import '../../../widget/Location.dart';
+import '../../../widget/Search.dart';
+import 'CartItemCard.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
