@@ -7,6 +7,7 @@ import 'package:rush_baskets/widget/color.dart';
 
 import '../../../widget/Spacing.dart';
 import '../../../widget/Time.dart';
+import '../../DrawerNavigation/HelpScreen.dart';
 
 class TrackOrderScreen extends StatelessWidget {
   const TrackOrderScreen({super.key});
@@ -216,40 +217,55 @@ class TrackOrderScreen extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  child: Container(
-                    height: 40,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(20)),
-                        color: orangeColor),
-                    child: const Center(
-                      child: CustomText(
-                          text: "cancel",
-                          textSize: 15,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white),
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      height: 40,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(20)),
+                          color: orangeColor),
+                      child: const Center(
+                        child: CustomText(
+                            text: "cancel",
+                            textSize: 15,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
-                  child: Container(
-                    height: 40,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black,
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HelpScreen(), // Replace with your HelpScreen widget
                         ),
-                        borderRadius: const BorderRadius.only(
-                            bottomRight: Radius.circular(20)),
-                        color: orangeColor),
-                    child: const Center(
-                        child: CustomText(
-                            text: "need help?",
-                            textSize: 15,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white)),
+                      );
+                    },
+                    child: Container(
+                      height: 40,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                              bottomRight: Radius.circular(20)),
+                          color: orangeColor),
+                      child: const Center(
+                          child: CustomText(
+                              text: "need help?",
+                              textSize: 15,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white)),
+                    ),
                   ),
                 )
               ],

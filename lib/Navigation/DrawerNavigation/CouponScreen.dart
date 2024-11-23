@@ -26,7 +26,9 @@ class CouponScreen extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10),
             child: IconButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const NavigationBottomScreen(initialIndex: 0)));
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => const NavigationBottomScreen(
+                          initialIndex: 0)));
                 },
                 icon: const Icon(
                   Icons.arrow_back_ios,
@@ -34,13 +36,17 @@ class CouponScreen extends StatelessWidget {
                 )),
           ),
         ),
-        body: ListView.builder(
+
+        body:
+
+        // Coupon Card List
+        ListView.builder(
           itemCount: 10,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.fromLTRB(15, 8, 15, 8),
               child: Container(
-                margin: const EdgeInsets.only(top: 20),
+                // margin: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     border: Border.all(
                         color: index % 2 == 0 ? orangeColor : violetColor),
@@ -52,13 +58,15 @@ class CouponScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        padding: const EdgeInsets.all(8),
-                        child: Image.asset(AssetsImages.chips),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: const EdgeInsets.all(8),
+                          child:
+                          // Image.asset(AssetsImages.chips),
+                          Image.asset("asset/image/Headphone.png")
                       ),
                       HorizontalSpacing(width: 20),
                       const Divider(),

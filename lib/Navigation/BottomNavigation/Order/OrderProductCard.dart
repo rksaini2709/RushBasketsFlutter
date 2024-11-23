@@ -1,16 +1,15 @@
-// rush_baskets\lib\Order\OrderItemCard.dart
+// rush_baskets\lib\Order\OrderProductCard.dart
 
 import 'package:flutter/material.dart';
-import 'package:rush_baskets/widget/Images.dart';
 
 import '../../../widget/Spacing.dart';
 import '../../../widget/Text.dart';
 import '../../../widget/color.dart';
 
-class OrderItemCard extends StatelessWidget {
+class OrderProductCard extends StatelessWidget {
   final int index;
 
-  const OrderItemCard({super.key, required this.index});
+  const OrderProductCard({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,7 @@ class OrderItemCard extends StatelessWidget {
               // Image.asset(AssetsImages.chips),
               Image.asset("asset/image/Chips.png"),
             ),
-            const SizedBox(width: 10),
+            HorizontalSpacing(width: 10),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

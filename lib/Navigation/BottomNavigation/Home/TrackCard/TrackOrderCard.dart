@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rush_baskets/Navigation/BottomNavigation/Order/TrackOrderScreen.dart';
 import '../../../../widget/Btn.dart';
 import '../../../../widget/Spacing.dart';
 import '../../../../widget/Text.dart';
@@ -113,9 +114,16 @@ class TrackOrderCard extends StatelessWidget {
                         name: "Track Now",
                         width: 100,
                         height: 35,
-                        onTap: onTrackNow,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const TrackOrderScreen(),
+                            ),
+                          );
+                        },
                         btnTextSize: 14,
-                      ),
+                      )
                     ],
                   ),
                 ),

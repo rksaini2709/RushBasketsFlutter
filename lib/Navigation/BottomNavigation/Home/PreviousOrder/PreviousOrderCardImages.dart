@@ -24,7 +24,7 @@ class PreviousOrderCardImages extends StatelessWidget {
               Image.asset(imageUrls[i], height: 50, width: 50),
               if (i < imageUrls.length - 1) ...[
                 HorizontalSpacing(width: 10),
-                const Text("+", style: TextStyle(fontSize: 20, color: blackColor)),
+                const Text("+  ", style: TextStyle(fontSize: 20, color: blackColor)),
               ],
             ],
           ],

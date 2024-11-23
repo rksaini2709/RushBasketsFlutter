@@ -1,6 +1,9 @@
+// rush_baskets\lib\Navigation\BottomNavigation\Home\PreviousOrder\PreviousOrderCardDetails.dart
+
 import 'package:flutter/material.dart';
 import 'package:rush_baskets/Navigation/BottomNavigation/Home/PreviousOrder/PreviousOrderCardImages.dart';
 
+import '../../../../Location/SelectAddress.dart';
 import '../../../../widget/Spacing.dart';
 import '../../../../widget/Text.dart';
 import '../../../../widget/color.dart';
@@ -41,11 +44,11 @@ class PreviousOrderCardDetails extends StatelessWidget {
         ),
         VerticalSpacing(height: 6),
 
-        // Pass imageUrls to PreviousOrderCardImages
+        // previous order product's images collection
         PreviousOrderCardImages(imageUrls: imageUrls),
-        VerticalSpacing(height: 6),
+
+        // order ID nd total ammount... order again btn
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +75,6 @@ class PreviousOrderCardDetails extends StatelessWidget {
                     ],
                   ),
                 ),
-                VerticalSpacing(height: 2),
                 Text.rich(
                   TextSpan(
                     children: [
@@ -97,18 +99,30 @@ class PreviousOrderCardDetails extends StatelessWidget {
                 ),
               ],
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: ElevatedButton(
-                onPressed: onOrderAgain,
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: whiteColor, backgroundColor: orangeColor,
-                  minimumSize: const Size(100, 35),
-                ),
-                child: const Text(
-                  "Order Again",
-                  style: TextStyle(fontSize: 14),
-                ),
+            const Spacer(),
+            ElevatedButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.vertical(top: Radius.circular(15.0)),
+                  ),
+                  builder: (BuildContext context) =>
+
+                      // choose your entire address
+                      const SelectAddress(),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                foregroundColor: whiteColor,
+                backgroundColor: orangeColor,
+                minimumSize: const Size(100, 35),
+              ),
+              child: const Text(
+                "Buy Again",
+                style: TextStyle(fontSize: 14),
               ),
             ),
           ],

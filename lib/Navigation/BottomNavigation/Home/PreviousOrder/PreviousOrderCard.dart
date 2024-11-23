@@ -30,6 +30,8 @@ class PreviousOrderCard extends StatelessWidget {
           ],
         ),
         VerticalSpacing(height: 10),
+
+        // buy again with an offer
         IntrinsicHeight(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -50,10 +52,10 @@ class PreviousOrderCard extends StatelessWidget {
                     totalAmount: 123.99,
                     imageUrls: const [
                       "asset/image/Cloth.png",
-                      "asset/image/Cloth.png",
-                      "asset/image/Cloth.png",
-                      "asset/image/Cloth.png",
-                      "asset/image/Cloth.png",
+                      "asset/image/Aata.png",
+                      "asset/image/Chips.png",
+                      "asset/image/Dove.png",
+                      "asset/image/FaceWash.png",
                     ],
                     onOrderAgain: () {
                       // Implement order again functionality here

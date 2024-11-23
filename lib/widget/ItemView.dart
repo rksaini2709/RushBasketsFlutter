@@ -6,7 +6,7 @@ class ItemView extends StatelessWidget {
     "asset/image/honey.png",
     "asset/image/Chips.png",
     "asset/image/HomeCleaner.png",
-    "asset/image/vegetables.png",
+    "asset/image/VegCard.png",
     "asset/image/honey.png",
   ];
 

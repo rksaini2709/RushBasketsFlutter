@@ -6,10 +6,10 @@ import '../../../widget/color.dart';
 
 class HomeOfferCard extends StatelessWidget {
   final List<String> imageList = [
-    "asset/image/vegetables.png",
-    "asset/image/vegetables.png",
-    "asset/image/vegetables.png",
-    "asset/image/vegetables.png",
+    "asset/image/VegCard.png",
+    "asset/image/VegCard.png",
+    "asset/image/VegCard.png",
+    "asset/image/VegCard.png",
   ];
 
   HomeOfferCard({super.key});

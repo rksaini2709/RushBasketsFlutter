@@ -14,7 +14,7 @@ class AssetsImages {
   static const verification = "$imagesPath/Verification.png";
   static const profile = "$imagesPath/Profile.png";
   static const chips = "$imagesPath/Chips.png";
-  static const vegetable = "$imagesPath/vegetables.png";
+  static const vegetable = "$imagesPath/VegCard.png";
   static const honey = "$imagesPath/honey.png";
   static const creditCard = "$imagesPath/CreditCard.png";
 

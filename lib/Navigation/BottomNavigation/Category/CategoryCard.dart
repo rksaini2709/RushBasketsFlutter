@@ -1,47 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:rush_baskets/widget/Spacing.dart';
 import 'package:rush_baskets/widget/color.dart';
-
-import '../../../widget/Text.dart';
 
 class CategoryCard extends StatelessWidget {
   final String imageUrl;
   final String title;
-  final int index;
 
-  const CategoryCard({super.key, required this.imageUrl, required this.title, required this.index});
+  const CategoryCard({
+    super.key,
+    required this.imageUrl,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        height: 170,
-        decoration: BoxDecoration(
-          // color: orangeColor,
-          border: Border.all(color: index % 2 == 0 ? orangeColor : violetColor),
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 140,
-              decoration: BoxDecoration(
-                // color: Colors.white,
-                border: Border.all(color: Colors.black),
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset(
-                  imageUrl,
-                  fit: BoxFit.contain,
-                ),
-              ),
+    return Container(
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        // gradient: const LinearGradient(
+        //   colors: [whiteColor, orangeColor],
+        //   begin: Alignment.topLeft,
+        //   end: Alignment.bottomRight,
+        // ),
+        color: Colors.white,
+        // border: Border.all(
+        //   color: blackColor
+        // ),
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 1,
+            blurRadius: 3,
+            offset: const Offset(4, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+
+          // Image Section
+          Expanded(
+            child: Image.asset(
+              imageUrl,
+              fit: BoxFit.contain,
             ),
-            const SizedBox(height: 5),
-            CustomText(text: title, textSize: 20, fontWeight: FontWeight.w700, color: Colors.black)
-          ],
-        ),
+          ),
+
+          // Title Section
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: blackColor,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }

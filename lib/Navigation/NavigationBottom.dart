@@ -263,15 +263,15 @@ class _NavigationBottomScreenState extends State<NavigationBottomScreen> {
           ],
         ),
         actions: [
-          const SizedBox(
-            child: Icon(
-                Icons.notifications_active,
-                color: Color(0xffEF8120),
-                size: 25,
-              ),
-          ),
+          // const SizedBox(
+          //   child: Icon(
+          //       Icons.favorite,
+          //       color: Color(0xffEF8120),
+          //       size: 25,
+          //     ),
+          // ),
           Padding(
-            padding: const EdgeInsets.only(right: 25, left: 25),
+            padding: const EdgeInsets.only(right: 20, left: 20),
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -281,7 +281,7 @@ class _NavigationBottomScreenState extends State<NavigationBottomScreen> {
               },
               child: const SizedBox(
                 child: Icon(
-                  Icons.favorite,
+                  Icons.notifications_active,
                   color: Color(0xffEF8120),
                   size: 25,
                 ),

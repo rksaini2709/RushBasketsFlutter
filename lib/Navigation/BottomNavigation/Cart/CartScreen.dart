@@ -20,32 +20,39 @@ class CartScreen extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+            padding: const EdgeInsets.fromLTRB(15, 10, 15, 0),
             child: Column(
               children: [
+
+                // Location
                 const locationWidget(),
-                VerticalSpacing(height: 20),
+                VerticalSpacing(height: 15),
+
+                // Search Bar
                 const Search(),
-                VerticalSpacing(height: 10),
+                VerticalSpacing(height: 15),
+
+                // All cart product Clear
+                const Align(
+                  alignment: Alignment.topRight,
+                  child: CustomText(
+                    text: "Clear all items",
+                    textSize: 12,
+                    fontWeight: FontWeight.w800,
+                    color: violetColor,
+                  ),
+                ),
               ],
             ),
           ),
-          const Divider(),
           Expanded(
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   children: [
-                    const Align(
-                      alignment: Alignment.topRight,
-                      child: CustomText(
-                        text: "Clear all items",
-                        textSize: 12,
-                        fontWeight: FontWeight.w800,
-                        color: violetColor,
-                      ),
-                    ),
+
+                    // List of Cart product
                     ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
@@ -58,6 +65,8 @@ class CartScreen extends StatelessWidget {
                               MaterialPageRoute(builder: (context) => const BuyScreen()),
                             );
                           },
+
+                          // Cart Product Card
                           child: CartItemCard(index: index),
                         );
                       },

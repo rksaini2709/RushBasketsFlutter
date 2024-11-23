@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:rush_baskets/widget/Spacing.dart';
-import '../../../../widget/Btn.dart';
-import '../../../../widget/Text.dart';
-import '../../../../widget/color.dart';
+import 'package:rush_baskets/widget/Btn.dart';
+import 'package:rush_baskets/widget/Text.dart';
+import '../../../widget/Spacing.dart';
+import '../../../widget/color.dart';
 
-class PopularDealCard extends StatefulWidget {
+class CategoryStoreItems extends StatefulWidget {
   final String title;
   final String oldPrice;
   final String newPrice;
@@ -16,7 +16,7 @@ class PopularDealCard extends StatefulWidget {
   final String quantity;
   final String timeLeft;
 
-  const PopularDealCard({
+  const CategoryStoreItems({
     super.key,
     required this.title,
     required this.oldPrice,
@@ -31,10 +31,10 @@ class PopularDealCard extends StatefulWidget {
   });
 
   @override
-  _PopularDealCardState createState() => _PopularDealCardState();
+  _CategoryStoreItemsState createState() => _CategoryStoreItemsState();
 }
 
-class _PopularDealCardState extends State<PopularDealCard> {
+class _CategoryStoreItemsState extends State<CategoryStoreItems> {
   int itemCount = 0;
   bool isFavorited = false;
   bool inCart = false;
@@ -176,7 +176,7 @@ class _PopularDealCardState extends State<PopularDealCard> {
                 Text(
                   widget.oldPrice,
                   style:
-                      const TextStyle(decoration: TextDecoration.lineThrough),
+                  const TextStyle(decoration: TextDecoration.lineThrough),
                 ),
                 HorizontalSpacing(width: 5),
                 CustomText(
@@ -227,49 +227,49 @@ class _PopularDealCardState extends State<PopularDealCard> {
             padding: const EdgeInsets.fromLTRB(10, 0, 10, 5),
             child: inCart
                 ? Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Decrement Button
-                      PrimaryBtnWidget(
-                        name: "-",
-                        width: 42,
-                        height: 36,
-                        btnTextSize: 20,
-                        textColor: Colors.white,
-                        btnColor: orangeColor,
-                        onTap: decrementItem,
-                      ),
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // Decrement Button
+                PrimaryBtnWidget(
+                  name: "-",
+                  width: 42,
+                  height: 36,
+                  btnTextSize: 20,
+                  textColor: Colors.white,
+                  btnColor: orangeColor,
+                  onTap: decrementItem,
+                ),
 
-                      // Item Count
-                      Text(
-                        itemCount.toString(),
-                        style: const TextStyle(fontSize: 18),
-                      ),
+                // Item Count
+                Text(
+                  itemCount.toString(),
+                  style: const TextStyle(fontSize: 18),
+                ),
 
-                      // Increment Button
-                      PrimaryBtnWidget(
-                        name: "+",
-                        width: 42,
-                        height: 36,
-                        btnTextSize: 20,
-                        textColor: Colors.white,
-                        btnColor: orangeColor,
-                        onTap: incrementItem,
-                      ),
-                    ],
-                  )
+                // Increment Button
+                PrimaryBtnWidget(
+                  name: "+",
+                  width: 42,
+                  height: 36,
+                  btnTextSize: 20,
+                  textColor: Colors.white,
+                  btnColor: orangeColor,
+                  onTap: incrementItem,
+                ),
+              ],
+            )
                 : Center(
-                    // Add to Cart Button
-                    child: PrimaryBtnWidget(
-                      name: "Add to Cart",
-                      width: 150,
-                      height: 35,
-                      btnTextSize: 14,
-                      textColor: whiteColor,
-                      btnColor: orangeColor,
-                      onTap: buy,
-                    ),
-                  ),
+              // Add to Cart Button
+              child: PrimaryBtnWidget(
+                name: "Add to Cart",
+                width: 150,
+                height: 35,
+                btnTextSize: 14,
+                textColor: whiteColor,
+                btnColor: orangeColor,
+                onTap: buy,
+              ),
+            ),
           ),
         ],
       ),
